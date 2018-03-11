@@ -2,6 +2,7 @@
 #include "functions.h"
 #include<string.h> 
 using namespace std;
+#include<vector>
 
 
 bool ARE_ALL_3_VIEWS_SAME(){
@@ -36,10 +37,10 @@ bool ARE_ALL_3_VIEWS_SAME(){
     std:: vector<vector<int> > tfront_edge;
     std:: vector<vector<int> > ttop_edge;
     std:: vector<vector<int> > tside_edge;
-    
-	MAKE_VIEW(1,1);
-	MAKE_VIEW(2,1);
-	MAKE_VIEW(3,1);
+    MAKE_VIEW();
+	// MAKE_VIEW(1,1);
+	// MAKE_VIEW(2,1);
+	// MAKE_VIEW(3,1);
 	if(tfront_vertex==front_vertex&&
 		tfront_edge== front_edge&&
 		ttop_vertex==top_vertex&&

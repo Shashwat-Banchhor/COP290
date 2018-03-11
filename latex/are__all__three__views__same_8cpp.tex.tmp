@@ -1,0 +1,22 @@
+\hypertarget{are__all__three__views__same_8cpp}{}\section{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp File Reference}
+\label{are__all__three__views__same_8cpp}\index{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp@{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{are__all__three__views__same_8cpp_aa955cd770191e287f77359bcc768dcc7}{A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{are__all__three__views__same_8cpp_aa955cd770191e287f77359bcc768dcc7}\label{are__all__three__views__same_8cpp_aa955cd770191e287f77359bcc768dcc7}} 
+\index{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp@{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp}!A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME@{A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME}}
+\index{A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME@{A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME}!are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp@{are\+\_\+all\+\_\+three\+\_\+views\+\_\+same.\+cpp}}
+\subsubsection{\texorpdfstring{A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+M\+E()}{ARE\_ALL\_3\_VIEWS\_SAME()}}
+{\footnotesize\ttfamily bool A\+R\+E\+\_\+\+A\+L\+L\+\_\+3\+\_\+\+V\+I\+E\+W\+S\+\_\+\+S\+A\+ME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
