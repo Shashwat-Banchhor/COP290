@@ -7,8 +7,10 @@
 #include <cmath>
 using namespace std;
 
-void convert3dplane(){
-	thplane.vertex.clear();
+vector<vector <int> > convert3dplane(vector<vector <int> > edges){
+    vector<vector <int> > thplane;
+    vector<vector <int> > edge = edges[0];
+	/*thplane.vertex.clear();
 	for(int i=0;i<threed.vertex.size();i++){
 		int x=threed.vertex[i][0];
 		int y=threed.vertex[i][1];
@@ -17,8 +19,8 @@ void convert3dplane(){
 		int ynew=z*(sin(30))+x*(sin(30))+y;
 		thplane.vertex[i].push_back(xnew);
 		thplane.vertex[i].push_back(ynew);
-	}
-	for(int i=0;i<threed.edge.size();i++){
+	}*/
+	/*for(int i=0;i<threed.edge.size();i++){
 		int x=threed.edge[i][0];
 		int y=threed.edge[i][1];
 		int z=threed.edge[i][2];
@@ -34,5 +36,27 @@ void convert3dplane(){
 
 		thplane.edge[i].push_back(xxnew);
 		thplane.edge[i].push_back(yynew);
-	}
+        
+        
+	}*/
+    for(int i=0;i<threed.edge.size();i++){
+        int x=threed[i][0];
+        int y=threed[i][1];
+        int z=threed[i][2];
+        int xx=threed[i][3];
+        int yy=threed[i][4];
+        int zz=threed[i][5];
+        int xnew=z*(cos(30))-x*(cos(30));
+        int ynew=z*(sin(30))+x*(sin(30))+y;
+        int xxnew=zz*(cos(30))-xx*(cos(30));
+        int yynew=zz*(sin(30))+xx*(sin(30))+yy;
+        thplane[i].push_back(xnew);
+        thplane[i].push_back(ynew);
+        
+        thplane[i].push_back(xxnew);
+        thplane[i].push_back(yynew);
+        
+        
+    }
+    return thplane;
 }

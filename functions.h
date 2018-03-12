@@ -1,6 +1,7 @@
-void MAKE_VIEW();
-void MAKE_COMPLETE_GRAPH();
-bool ARE_ALL_3_VIEWS_SAME();
-void MAKE_VIEW_GRAPH(int k);
-void DISPLAY ();
-void convert3dplane();
+vector< vector< vector<int> > > make_view(vector< vector< vector<int> > > v);
+void make_complete_graph();
+bool are_all_three_views_same();
+void make_view_graph(int k);
+void display ();
+vector< vector<int> > convert3dplane(vector< vector<int> > edges);
+

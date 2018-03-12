@@ -7,6 +7,8 @@
 // is found elsewhere.  Anyone who wishes to use it must include global.h,
 // either directly or indirectly.
 
+vector< vector< vector<int> > > arr_of_views;
+
 class VIEW
 {
     // Access specifier
@@ -114,7 +116,7 @@ class threed_object{
         int rnx=maxx-minx;
         int rnz=maxz-minz;
         int rny=maxy-miny;
-        int sc;
+        int sc=0;
         if(rnx<rny&&rnz<rny){
             sc=rny/maxlimit+1;
         }
@@ -206,9 +208,9 @@ class threedplane{
     std::vector<std::vector<int> > edge;
 }; 
 
- threedplane thplane;
-  threed_object threed;
-  VIEW front;
-  VIEW top;
-  VIEW side;
+ //threedplane thplane;
+  //threed_object threed;
+  //VIEW front;
+  //VIEW top;
+  //VIEW side;
 #endif

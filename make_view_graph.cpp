@@ -3,7 +3,7 @@
 #include<string.h> 
 using namespace std;
 
-void MAKE_VIEW_GRAPH(int k){
+void make_view_graph(int k){
 	if(k==1){
 				
 	}

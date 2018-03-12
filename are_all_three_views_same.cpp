@@ -5,7 +5,7 @@ using namespace std;
 #include<vector>
 
 
-bool ARE_ALL_3_VIEWS_SAME(){
+bool are_all_three_views_same(){
     
     int code=0;
     int no_of_vertex=0;
@@ -37,7 +37,7 @@ bool ARE_ALL_3_VIEWS_SAME(){
     std:: vector<vector<int> > tfront_edge;
     std:: vector<vector<int> > ttop_edge;
     std:: vector<vector<int> > tside_edge;
-    MAKE_VIEW();
+    make_view();
 	// MAKE_VIEW(1,1);
 	// MAKE_VIEW(2,1);
 	// MAKE_VIEW(3,1);

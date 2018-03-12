@@ -1,37 +1,33 @@
 # include <GLUT/GLUT.h>
 #include <iostream>
-#include <stdio.h>
-#include<string.h>
-
 #include <vector>
-#include "functions.h"
 #include "global.h"
 
 using namespace std;
 
 
-//vector<vector<int> > thplane.edge ;
+vector<vector<int> > veco ;
 void render();
 void reshape(int x, int y);
 
 void keyboard(unsigned char c , int x ,int y);
 void mouse(int button,int state,int x,int y);
 
-int main(int argc , char** argv){
+int main(int argc, char ** argv){
     int n;
     int m;
     cin >> m;
-    while (m == 1){
+    while (m == 1){ 
         vector<int> vec ;
-        cin >> n;
+        cin >> n;  
         while (n!= -1){
             vec.push_back(n);
             cin >> n ;
         }
-        thplane.edge.push_back(vec);
+        veco.push_back(vec);
         cin >> m;
     }
-    cout << thplane.edge.size();
+    cout << veco.size();
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
     glutInitWindowPosition(100,100);
@@ -39,55 +35,55 @@ int main(int argc , char** argv){
     glutCreateWindow("Simple Glut");
     
     glutDisplayFunc(render);
-    
-    
-    glutReshapeFunc(reshape);
+
+
+        glutReshapeFunc(reshape);
     glutKeyboardFunc(keyboard);
     glutMouseFunc(mouse);
-    
-    
+
+
     glutMainLoop();
-    //return 0;
+    return 0;
 }
 
 void render(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     cout << "Hai";
-    int size = thplane.edge.size();
+    int size = veco.size();
     cout << size;
     for (int i=0;i<size;i++){
-        
-        vector<int> vec = thplane.edge.at(i);
+
+        vector<int> vec = veco.at(i);
         glBegin(GL_LINES);
         glColor3f(1,0,0);
         glVertex2f(vec.at(0),vec.at(1));
         glVertex2f(vec.at(2),vec.at(3));
         glEnd();
     }
-    /*glBegin(GL_LINES);
-     glColor3f(0,1,0);
-     glVertex2f(0.5,0.5);
-     glVertex2f(0,0.5);
-     glEnd();
-     */
-    glutSwapBuffers();
+        /*glBegin(GL_LINES);
+        glColor3f(0,1,0);
+        glVertex2f(0.5,0.5);
+        glVertex2f(0,0.5);
+        glEnd();
+        */
+        glutSwapBuffers();
     
-    
+
 }
 
 void keyboard(unsigned char c , int x ,int y){
-    
+
     if (c == 27){
         exit(0);
     }
-    
+
 }
 void mouse(int button,int state,int x,int y){
     if (button == GLUT_RIGHT_BUTTON){
         exit(0);
     }
     else {
-        
+
     }
 }
 
@@ -110,4 +106,3 @@ void reshape(int width, int height)
     /* switch back to the model view matrix */
     glMatrixMode(GL_MODELVIEW);
 }
-

@@ -3,6 +3,6 @@
 #include<string.h> 
 using namespace std;
 
-void MAKE_COMPLETE_GRAPH(){
+void make_complete_graph(){
 	
 }
