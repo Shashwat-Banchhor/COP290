@@ -29,27 +29,11 @@ class threed_object{
     
 };
 
-class temp_threed_object{
-    public:
-        // Data Members
-    std::vector<std::vector<int> > vertex;
-    std::vector<std::vector<int> > edge;
-    
-};
-
-
-
 class threedplane{
     public:
     std::vector<std::vector<int> > vertex;
     std::vector<std::vector<int> > edge;
 }; 
-
-class Combine{
-    public:
-    std::vector<std::vector<int> > edge;
-}; 
-
 class fts{
     public:
     std::vector<std::vector<int> > fvertex;

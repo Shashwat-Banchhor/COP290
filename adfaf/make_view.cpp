@@ -10,15 +10,13 @@ using namespace std;
 // VIEW side;
 fts  MAKE_VIEW(threed_object threed){
     // threed_object threed;
-   // cout << "INSIDE_make";
-   // fts twoedge;
     int code=0;
     int no_of_vertex=0;
     int no_of_edge=0;
     fts twoedge;
     
-    // std::vector<std::std::vector<int>  > vertex;
-    // std::vector<std::std::vector<int>  > edge;
+    // vector<vector<int> > vertex;
+    // vector<vector<int> > edge;
     
     int no_of_vertex_front=0;
     int no_of_vertex_top=0;
@@ -27,33 +25,22 @@ fts  MAKE_VIEW(threed_object threed){
     int no_of_edge_front=0;
     int no_of_edge_side=0;
     int no_of_edge_top=0;
-
- //    cout << "Input_Print";
- //    std::vector<std::vector<int>  > ber = threed.edge; 
-	// for(int b=0;b<ber.size();b++){
-	// 	std::vector<int> bi = ber.at(b);
-	// 	for (int a=0 ; a<bi.size();a++){
-	// 		cout << bi.at(a);
-	// 	}
-	// } 
-
- //    cout << "Printed_right";
     
-    // std:: std::vector<std::std::vector<int>  > front_vertex;
-    // std::std::vector<std::std::vector<int>  > top_vertex;
-    // std::std::vector<std::std::vector<int>  > side_vertex;
+    // std:: vector<vector<int> > front_vertex;
+    // std::vector<vector<int> > top_vertex;
+    // std::vector<vector<int> > side_vertex;
     
-    // std:: std::vector<std::std::vector<int>  > front_edge;
-    // std:: std::vector<std::std::vector<int>  > top_edge;
-    // std:: std::vector<std::std::vector<int>  > side_edge;
+    // std:: vector<vector<int> > front_edge;
+    // std:: vector<vector<int> > top_edge;
+    // std:: vector<vector<int> > side_edge;
     
-    // std:: std::vector<std::std::vector<int>  > tfront_vertex;
-    // std:: std::vector<std::std::vector<int>  > ttop_vertex;
-    // std:: std::vector<std::std::vector<int>  > tside_vertex;
+    // std:: vector<vector<int> > tfront_vertex;
+    // std:: vector<vector<int> > ttop_vertex;
+    // std:: vector<vector<int> > tside_vertex;
     
-    // std:: std::vector<std::std::vector<int>  > tfront_edge;
-    // std:: std::vector<std::std::vector<int>  > ttop_edge;
-    // std:: std::vector<std::std::vector<int>  > tside_edge;
+    // std:: vector<vector<int> > tfront_edge;
+    // std:: vector<vector<int> > ttop_edge;
+    // std:: vector<vector<int> > tside_edge;
 //if(temp==0){
 		// side.vertex.clear();
 		// for(int i=0;i<threed.vertex.size();i++){
@@ -61,13 +48,10 @@ fts  MAKE_VIEW(threed_object threed){
 		// 	side.vertex[i].push_back(threed.vertex[i][1]);
 		// }
 		for(int i=0;i<threed.edge.size();i++){
-			std::vector<int>  side_edges ;
-			std::vector<int>  s_edge_of_3d = (threed.edge).at(i); 
-			side_edges.push_back(s_edge_of_3d.at(2));
-			side_edges.push_back(s_edge_of_3d.at(1));
-			side_edges.push_back(s_edge_of_3d.at(5));
-			side_edges.push_back(s_edge_of_3d.at(4));
-			twoedge.sedge.push_back(side_edges);
+			twoedge.sedge[i].push_back(threed.edge[i][2]);
+			twoedge.sedge[i].push_back(threed.edge[i][1]);
+			twoedge.sedge[i].push_back(threed.edge[i][5]);
+			twoedge.sedge[i].push_back(threed.edge[i][4]);
 		}
 		// top.vertex.clear();
 		// for(int i=0;i<threed.vertex.size();i++){
@@ -75,13 +59,10 @@ fts  MAKE_VIEW(threed_object threed){
 		// 	top.vertex[i].push_back(threed.vertex[i][2]);
 		// }
 		for(int i=0;i<threed.edge.size();i++){
-			std::vector<int>  top_edges ;
-			std::vector<int>  t_edge_of_3d = (threed.edge).at(i); 
-			top_edges.push_back(t_edge_of_3d.at(0));
-			top_edges.push_back(t_edge_of_3d.at(2));
-			top_edges.push_back(t_edge_of_3d.at(3));
-			top_edges.push_back(t_edge_of_3d.at(5));
-			twoedge.tedge.push_back(top_edges);
+			twoedge.tedge[i].push_back(threed.edge[i][0]);
+			twoedge.tedge[i].push_back(threed.edge[i][2]);
+			twoedge.tedge[i].push_back(threed.edge[i][3]);
+			twoedge.tedge[i].push_back(threed.edge[i][5]);
 		}
 		// front.vertex.clear();
 		// for(int i=0;i<threed.vertex.size();i++){
@@ -89,16 +70,11 @@ fts  MAKE_VIEW(threed_object threed){
 		// 	front.vertex[i].push_back(threed.vertex[i][1]);
 		// }
 		for(int i=0;i<threed.edge.size();i++){
-			std::vector<int>  front_edges ;
-			std::vector<int>  f_edge_of_3d = (threed.edge).at(i); 
-			front_edges.push_back(f_edge_of_3d.at(0));
-			front_edges.push_back(f_edge_of_3d.at(1));
-			front_edges.push_back(f_edge_of_3d.at(3));
-			front_edges.push_back(f_edge_of_3d.at(4));
-			//cout << f_edge_of_3d.at(4);
-			twoedge.fedge.push_back(front_edges);
+			twoedge.fedge[i].push_back(threed.edge[i][0]);
+			twoedge.fedge[i].push_back(threed.edge[i][1]);
+			twoedge.fedge[i].push_back(threed.edge[i][3]);
+			twoedge.fedge[i].push_back(threed.edge[i][4]);
 		}
-		//cout << "DEPARTING_make";
 		return twoedge;
 //}
 // else{

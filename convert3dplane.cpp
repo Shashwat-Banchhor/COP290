@@ -5,58 +5,44 @@
 #include <string.h>
 #include <vector>
 #include <cmath>
-using namespace std;
+#define _USE_MATH_DEFINES
 
-vector<vector <int> > convert3dplane(vector<vector <int> > edges){
-    vector<vector <int> > thplane;
-    vector<vector <int> > edge = edges[0];
-	/*thplane.vertex.clear();
+using namespace std;
+threedplane three_d_plane;
+threedplane convert3dplane(threed_object threed){
+	/*three_d_plane.vertex.clear();
+	vector<vector <int> > vertices = threed.vertex;
 	for(int i=0;i<threed.vertex.size();i++){
 		int x=threed.vertex[i][0];
 		int y=threed.vertex[i][1];
 		int z=threed.vertex[i][2];
 		int xnew=z*(cos(30))-x*(cos(30));
 		int ynew=z*(sin(30))+x*(sin(30))+y;
-		thplane.vertex[i].push_back(xnew);
-		thplane.vertex[i].push_back(ynew);
+		three_d_plane.vertex[i].push_back(xnew);
+		three_d_plane.vertex[i].push_back(ynew);
 	}*/
-	/*for(int i=0;i<threed.edge.size();i++){
-		int x=threed.edge[i][0];
-		int y=threed.edge[i][1];
-		int z=threed.edge[i][2];
-		int xx=threed.edge[i][3];
-		int yy=threed.edge[i][4];
-		int zz=threed.edge[i][5];
-		int xnew=z*(cos(30))-x*(cos(30));
-		int ynew=z*(sin(30))+x*(sin(30))+y;
-		int xxnew=zz*(cos(30))-xx*(cos(30));
-		int yynew=zz*(sin(30))+xx*(sin(30))+yy;
-		thplane.edge[i].push_back(xnew);
-		thplane.edge[i].push_back(ynew);
 
-		thplane.edge[i].push_back(xxnew);
-		thplane.edge[i].push_back(yynew);
-        
-        
-	}*/
-    for(int i=0;i<threed.edge.size();i++){
-        int x=threed[i][0];
-        int y=threed[i][1];
-        int z=threed[i][2];
-        int xx=threed[i][3];
-        int yy=threed[i][4];
-        int zz=threed[i][5];
-        int xnew=z*(cos(30))-x*(cos(30));
-        int ynew=z*(sin(30))+x*(sin(30))+y;
-        int xxnew=zz*(cos(30))-xx*(cos(30));
-        int yynew=zz*(sin(30))+xx*(sin(30))+yy;
-        thplane[i].push_back(xnew);
-        thplane[i].push_back(ynew);
-        
-        thplane[i].push_back(xxnew);
-        thplane[i].push_back(yynew);
-        
-        
-    }
-    return thplane;
+	//vector<vector <int> > edges_vec = threed.edge;
+	std::vector<std::vector<int> > vivo = threed.edge;
+	for(int i=0;i<vivo.size();i++){
+		std::vector<int> edges = vivo.at(i);
+		int x=edges.at(0);
+		int y=edges.at(1);
+		int z=edges.at(2);
+		int xx=edges.at(3);
+		int yy=edges.at(4);
+		int zz=edges.at(5);
+		int xnew=z*(cos(M_PI/6))-x*(cos(M_PI/6));
+		int ynew=z*(sin(M_PI/6))+x*(sin(M_PI/6))+y;
+		int xxnew=zz*(cos(M_PI/6))-xx*(cos(M_PI/6));
+		int yynew=zz*(sin(M_PI/6))+xx*(sin(M_PI/6))+yy;
+		std::vector<int> vec ;
+		vec.push_back(xnew);
+		vec.push_back(ynew);
+
+		vec.push_back(xxnew);
+		vec.push_back(yynew);
+		(three_d_plane.edge).push_back(vec);
+	}
+	return three_d_plane;
 }
