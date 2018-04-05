@@ -270,322 +270,327 @@ threedplane thplane;
 	fts twod;
 Combine comb;
 int main(int argc , char** argv){
-    
+    int Inp_Count;
+
    
-
+    cin >> Inp_Count;
 	//threedplane thplane;
-	threed_object threed;
-    int code=0;
-	int no_of_vertex=0;
-	int no_of_edge=0;
+	while (Inp_Count!=-1){
+			threed_object threed;
+		    int code=0;
+			int no_of_vertex=0;
+			int no_of_edge=0;
 
-	//vector<vector<int> > threed;
-	// vector<vector<int> > edge;
+			//vector<vector<int> > threed;
+			// vector<vector<int> > edge;
 
-	int no_of_vertex_front=0;
-	int no_of_vertex_top=0;
-	int no_of_vertex_side=0;
-	
-	int no_of_edge_front=0;
-	int no_of_edge_side=0;
-	int no_of_edge_top=0;
-
-	// vector<vector<int> > front_vertex;
-	// vector<vector<int> > top_vertex;
-	// vector<vector<int> > side_vertex;
-
-	// vector<vector<int> > front_edge;
-	// vector<vector<int> > top_edge;
-	// vector<vector<int> > side_edge;
-
-	/*vector <vector<int> > tfront_vertex;
-	vector<vector<int> > ttop_vertex;
-	vector<vector<int> > tside_vertex;
-
-	vector<vector<int> > tfront_edge;
-	vector<vector<int> > ttop_edge;
-	vector<vector<int> > tside_edge;*/
-
-	int n ;
-	cout << "Choose_one_of_these_two: \n";
-	cout << "1. 3_d_to_2_d\n ";
-	cout << "2. 2-d to 3-d\n ";
-	cin  >> code;
-	
-	if (code==1){
-		
-		cout<<"PLease Enter_the_pair_of_vertices_defining_edge: \n";
-		cin>>n;
-	
-		int i=0;
-
-		std::vector<std::vector<int> > veco ;
-
-		while(n!=-1){
-             std::vector<int> edge_vertices ;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			veco.push_back(edge_vertices);
-			i=i+1;
+			int no_of_vertex_front=0;
+			int no_of_vertex_top=0;
+			int no_of_vertex_side=0;
 			
-			 cin>>n;
-		}
-		threed.edge = veco;
-			  twod=MAKE_VIEW(threed);
-		   std::vector<std::vector<int> > vin =  twod.fedge;
+			int no_of_edge_front=0;
+			int no_of_edge_side=0;
+			int no_of_edge_top=0;
+
+			// vector<vector<int> > front_vertex;
+			// vector<vector<int> > top_vertex;
+			// vector<vector<int> > side_vertex;
+
+			// vector<vector<int> > front_edge;
+			// vector<vector<int> > top_edge;
+			// vector<vector<int> > side_edge;
+
+			/*vector <vector<int> > tfront_vertex;
+			vector<vector<int> > ttop_vertex;
+			vector<vector<int> > tside_vertex;
+
+			vector<vector<int> > tfront_edge;
+			vector<vector<int> > ttop_edge;
+			vector<vector<int> > tside_edge;*/
+
+			int n ;
+			cout << "Choose_one_of_these_two: \n";
+			cout << "1. 3_d_to_2_d\n ";
+			cout << "2. 2-d to 3-d\n ";
+			cin  >> code;
+			
+			if (code==1){
+				
+				cout<<"PLease Enter_the_pair_of_vertices_defining_edge: \n";
+				cin>>n;
+			
+				int i=0;
+
+				std::vector<std::vector<int> > veco ;
+
+				while(n!=-1){
+		             std::vector<int> edge_vertices ;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					veco.push_back(edge_vertices);
+					i=i+1;
+					
+					 cin>>n;
+				}
+				threed.edge = veco;
+					  twod=MAKE_VIEW(threed);
+				   std::vector<std::vector<int> > vin =  twod.fedge;
+			}
+
+			else {
+				std::vector<std::vector<int> > veco ;
+				
+
+		///  FRONT
+				cout<<"PLease Enter_the_pair_of_vertices_defining_edge-: FTS: \n";
+				cin>>n;
+
+				while(n!=-1){
+		             std::vector<int> edge_vertices ;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					
+					veco.push_back(edge_vertices);
+				
+					
+					 cin>>n;
+				}
+				twod.fedge = veco;
+				veco.clear();
+		//TOP
+				cin>>n;
+
+				while(n!=-1){
+		             std::vector<int> edge_vertices ;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					
+					veco.push_back(edge_vertices);
+				
+					
+					 cin>>n;
+				}
+				twod.tedge = veco;
+				veco.clear();
+
+		// SIDE
+				cin>>n;
+
+				while(n!=-1){
+		             std::vector<int> edge_vertices ;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					cin>>n;
+					edge_vertices.push_back(n);
+					
+					veco.push_back(edge_vertices);
+				
+					
+					 cin>>n;
+				}
+				twod.sedge = veco;
+				veco.clear();
+
+
+
+				temp_threed_object temp_3D ;
+				temp_3D = form_vertex(twod);
+				// cout << "out form_ver";
+				// std::vector<std::vector<int> > s_edge;
+				// // s_edge = twod.sedge;
+				// // // for (int g=0 ;g< s_edge.size();g++){
+				// // // 		std::vector<int> vec= s_edge.at(g);
+				// // // 		for (int b=0;b<vec.size();b++){
+				// // // 			std::cout << vec.at(b);
+				// // // 		}
+				// // // 		std::cout << "\n";
+
+				// // // 	}
+					
+				// std::cout<< "end of check_f\n";
+				// cin >> n;
+				std::vector<std::vector<int> > vte;
+				vte= removing_edge(temp_3D,twod);
+				threed.edge = vte;
+				// cout << "out rem";
+				// cin >> n;
+
+			}	
+			// std::vector<std::vector<int> >  v;
+			// std::vector<int> ve ;
+			// ve.push_back(0);
+			// ve.push_back(1);
+			// ve.push_back(0);
+			// ve.push_back(0);
+			// ve.push_back(1);
+			// ve.push_back(1);
+			// v.push_back(ve);
+			// threed.edge = v;
+
+			thplane = convert3dplane(threed);
+				// 		  std::cout<<"f and t thplane";
+				// 	  		std::vector<std::vector<int> > corrected_edges;
+				// 	  		corrected_edges=thplane.edge;
+				//  for (int g=0 ;g< corrected_edges.size();g++){
+				// 		std::vector<int> vec= corrected_edges.at(g);
+				// 		for (int b=0;b<vec.size();b++){
+				// 			std::cout << vec.at(b);
+				// 		}
+				// 		std::cout << "\n";
+
+				// 	}
+				// std::cout<< "end of f and t";
+			comb = Combine_func(twod,thplane);
+
+
+			// cout << "Hai\n";
+			// std::vector<std::vector<int> > front_view_edges = comb.edge;
+			// 		for (int g=0 ;g< front_view_edges.size();g++){
+			// 			std::vector<int> vec= front_view_edges.at(g);
+			// 			for (int b=0;b<vec.size();b++){
+			// 				cout << vec.at(b) << "\n";
+			// 			}
+
+			// 		}
+
+			// 	    }
+			/*cout << "Done_convert";
+			int y;
+			cin >> y ;*/
+				/*else{
+				cout<< "Enter_vertex_in_front_view: ";
+				cin>> n;
+				int i=0;
+				while(n!=-1){
+					front.vertex[i].push_back(n);
+					cin>>n;
+					front.vertex[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_vertex_front = i;
+				cout<<"Enter_the_pair_of_vertex_defining_edge: ";
+				cin>>n;
+				i=0;
+				while(n!=-1){
+					front.edge[i].push_back(n);
+					cin>>n;
+					front.edge[i].push_back(n);
+					cin>>n;
+					front.edge[i].push_back(n);
+					cin>>n;
+					front.edge[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_edge_front=i;
+
+
+						cout<< "Enter_vertex_in_top_view: ";
+				cin>> n;
+				i=0;
+				while(n!=-1){
+					top.vertex[i].push_back(n);
+					cin>>n;
+					top.vertex[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_vertex_top = i;
+				cout<<"Enter_the_pair_of_vertex_defining_edge: ";
+				cin>>n;
+				i=0;
+				while(n!=-1){
+					top.edge[i].push_back(n);
+					cin>>n;
+					top.edge[i].push_back(n);
+					cin>>n;
+					top.edge[i].push_back(n);
+					cin>>n;
+					top.edge[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_edge_top=i;
+
+
+						cout<< "Enter_vertex_in_side_view: ";
+				cin>> n;
+				i=0;
+				while(n!=-1){
+					side.vertex[i].push_back(n);
+					cin>>n;
+					side.vertex[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_vertex_side = i;
+				cout<<"Enter_the_pair_of_vertex_defining_edge: ";
+				cin>>n;
+				i=0;
+				while(n!=-1){
+					side.edge[i].push_back(n);
+					cin>>n;
+					side.edge[i].push_back(n);
+					cin>>n;
+					side.edge[i].push_back(n);
+					cin>>n;
+					side.edge[i].push_back(n);
+					i=i+1;
+					cin>>n;
+				}
+				no_of_edge_side=i;
+
+
+				// MAKE_COMPLETE_GRAPH();
+				// MAKE_VIEW();
+				// bool b= ARE_ALL_3_VIEWS_SAME();
+				// if(b==true){
+				// 	MAKE_VIEW_GRAPH(1);
+				// }
+				// DISPLAY();
+			}*/
+
+
+			glutInit(&argc,argv);
+		    glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+		    glutInitWindowPosition(100,100);
+		    glutInitWindowSize(512,512);
+		    glutCreateWindow("Simple Glut");
+		    glutDisplayFunc(render);
+		    
+		    
+		    glutReshapeFunc(reshape);
+		    glutKeyboardFunc(keyboard);
+		    glutMouseFunc(mouse);
+		    
+		    
+		    glutMainLoop();
+			cin >> Inp_Count;
 	}
 
-	else {
-		std::vector<std::vector<int> > veco ;
-		
-
-///  FRONT
-		cout<<"PLease Enter_the_pair_of_vertices_defining_edge-: FTS: \n";
-		cin>>n;
-
-		while(n!=-1){
-             std::vector<int> edge_vertices ;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			
-			veco.push_back(edge_vertices);
-		
-			
-			 cin>>n;
-		}
-		twod.fedge = veco;
-		veco.clear();
-//TOP
-		cin>>n;
-
-		while(n!=-1){
-             std::vector<int> edge_vertices ;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			
-			veco.push_back(edge_vertices);
-		
-			
-			 cin>>n;
-		}
-		twod.tedge = veco;
-		veco.clear();
-
-// SIDE
-		cin>>n;
-
-		while(n!=-1){
-             std::vector<int> edge_vertices ;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			cin>>n;
-			edge_vertices.push_back(n);
-			
-			veco.push_back(edge_vertices);
-		
-			
-			 cin>>n;
-		}
-		twod.sedge = veco;
-		veco.clear();
-
-
-
-		temp_threed_object temp_3D ;
-		temp_3D = form_vertex(twod);
-		// cout << "out form_ver";
-		// std::vector<std::vector<int> > s_edge;
-		// // s_edge = twod.sedge;
-		// // // for (int g=0 ;g< s_edge.size();g++){
-		// // // 		std::vector<int> vec= s_edge.at(g);
-		// // // 		for (int b=0;b<vec.size();b++){
-		// // // 			std::cout << vec.at(b);
-		// // // 		}
-		// // // 		std::cout << "\n";
-
-		// // // 	}
-			
-		// std::cout<< "end of check_f\n";
-		// cin >> n;
-		std::vector<std::vector<int> > vte;
-		vte= removing_edge(temp_3D,twod);
-		threed.edge = vte;
-		// cout << "out rem";
-		// cin >> n;
-
-	}	
-	// std::vector<std::vector<int> >  v;
-	// std::vector<int> ve ;
-	// ve.push_back(0);
-	// ve.push_back(1);
-	// ve.push_back(0);
-	// ve.push_back(0);
-	// ve.push_back(1);
-	// ve.push_back(1);
-	// v.push_back(ve);
-	// threed.edge = v;
-
-	thplane = convert3dplane(threed);
-		// 		  std::cout<<"f and t thplane";
-		// 	  		std::vector<std::vector<int> > corrected_edges;
-		// 	  		corrected_edges=thplane.edge;
-		//  for (int g=0 ;g< corrected_edges.size();g++){
-		// 		std::vector<int> vec= corrected_edges.at(g);
-		// 		for (int b=0;b<vec.size();b++){
-		// 			std::cout << vec.at(b);
-		// 		}
-		// 		std::cout << "\n";
-
-		// 	}
-		// std::cout<< "end of f and t";
-	comb = Combine_func(twod,thplane);
-
-
-	// cout << "Hai\n";
-	// std::vector<std::vector<int> > front_view_edges = comb.edge;
-	// 		for (int g=0 ;g< front_view_edges.size();g++){
-	// 			std::vector<int> vec= front_view_edges.at(g);
-	// 			for (int b=0;b<vec.size();b++){
-	// 				cout << vec.at(b) << "\n";
-	// 			}
-
-	// 		}
-
-	// 	    }
-	/*cout << "Done_convert";
-	int y;
-	cin >> y ;*/
-		/*else{
-		cout<< "Enter_vertex_in_front_view: ";
-		cin>> n;
-		int i=0;
-		while(n!=-1){
-			front.vertex[i].push_back(n);
-			cin>>n;
-			front.vertex[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_vertex_front = i;
-		cout<<"Enter_the_pair_of_vertex_defining_edge: ";
-		cin>>n;
-		i=0;
-		while(n!=-1){
-			front.edge[i].push_back(n);
-			cin>>n;
-			front.edge[i].push_back(n);
-			cin>>n;
-			front.edge[i].push_back(n);
-			cin>>n;
-			front.edge[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_edge_front=i;
-
-
-				cout<< "Enter_vertex_in_top_view: ";
-		cin>> n;
-		i=0;
-		while(n!=-1){
-			top.vertex[i].push_back(n);
-			cin>>n;
-			top.vertex[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_vertex_top = i;
-		cout<<"Enter_the_pair_of_vertex_defining_edge: ";
-		cin>>n;
-		i=0;
-		while(n!=-1){
-			top.edge[i].push_back(n);
-			cin>>n;
-			top.edge[i].push_back(n);
-			cin>>n;
-			top.edge[i].push_back(n);
-			cin>>n;
-			top.edge[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_edge_top=i;
-
-
-				cout<< "Enter_vertex_in_side_view: ";
-		cin>> n;
-		i=0;
-		while(n!=-1){
-			side.vertex[i].push_back(n);
-			cin>>n;
-			side.vertex[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_vertex_side = i;
-		cout<<"Enter_the_pair_of_vertex_defining_edge: ";
-		cin>>n;
-		i=0;
-		while(n!=-1){
-			side.edge[i].push_back(n);
-			cin>>n;
-			side.edge[i].push_back(n);
-			cin>>n;
-			side.edge[i].push_back(n);
-			cin>>n;
-			side.edge[i].push_back(n);
-			i=i+1;
-			cin>>n;
-		}
-		no_of_edge_side=i;
-
-
-		// MAKE_COMPLETE_GRAPH();
-		// MAKE_VIEW();
-		// bool b= ARE_ALL_3_VIEWS_SAME();
-		// if(b==true){
-		// 	MAKE_VIEW_GRAPH(1);
-		// }
-		// DISPLAY();
-	}*/
-
-
-	glutInit(&argc,argv);
-    glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowPosition(100,100);
-    glutInitWindowSize(512,512);
-    glutCreateWindow("Simple Glut");
-    glutDisplayFunc(render);
-    
-    
-    glutReshapeFunc(reshape);
-    glutKeyboardFunc(keyboard);
-    glutMouseFunc(mouse);
-    
-    
-    glutMainLoop();
 
     return 0;
 }
