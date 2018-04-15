@@ -309,6 +309,7 @@ int main(int argc , char** argv){
 			vector<vector<int> > tside_edge;*/
 
 			int n ;
+			int k;
 			cout << "Choose_one_of_these_two: \n";
 			cout << "1. 3_d_to_2_d\n ";
 			cout << "2. 2-d to 3-d\n ";

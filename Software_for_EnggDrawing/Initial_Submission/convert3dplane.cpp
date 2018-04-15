@@ -23,6 +23,7 @@ threedplane convert3dplane(threed_object threed){
 	}*/
 
 	//vector<vector <int> > edges_vec = threed.edge;
+	int l;
 	std::vector<std::vector<int> > vivo = threed.edge;
 	for(int i=0;i<vivo.size();i++){
 		std::vector<int> edges = vivo.at(i);
