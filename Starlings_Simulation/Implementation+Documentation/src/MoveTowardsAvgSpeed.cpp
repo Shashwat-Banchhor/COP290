@@ -80,7 +80,7 @@ Birds MoveTowardsAvgSpeed(Birds birds , BirdsLocal local_birds)
           ;
         } 
 
-        GLfloat v_max = 0.05f ;
+        GLfloat v_max = 0.0125f ;
 
         GLfloat gamma = beta - delta; /// ANGLE b/w the two VELOCITIES; 
 

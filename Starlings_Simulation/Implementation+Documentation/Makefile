@@ -1,30 +1,38 @@
+CC = g++
+
+FLAGS = -std=c++11   
+
 all: exec
 
 
-exec: main.o  bird_Input.o  GetLocalCOM.o GetLocalDistances.o DrawAndCheckBirds.o MoveTowardsCOM.o MoveAwayNearest.o  MoveTowardsAvgSpeed.o
-	g++  main.o  bird_Input.o  GetLocalCOM.o GetLocalDistances.o DrawAndCheckBirds.o MoveTowardsCOM.o MoveAwayNearest.o  MoveTowardsAvgSpeed.o -o Birds -framework GLUT -framework OpenGL
+exec: main.o  bird_Input.o  GetLocalCOM.o GetLocalDistances.o DrawAndCheckBirds.o MoveTowardsCOM.o MoveAwayNearest.o  MoveTowardsAvgSpeed.o GetEnergy.o
+	g++ -std=c++11 main.o  bird_Input.o  GetLocalCOM.o GetLocalDistances.o DrawAndCheckBirds.o MoveTowardsCOM.o MoveAwayNearest.o  MoveTowardsAvgSpeed.o GetEnergy.o -o Birds -framework GLUT -framework OpenGL
+	
 
 
 main.o: main.cpp
-	g++ -c  main.cpp -lstdc++ -framework GLUT -framework OpenGL
+	$(CC) -c  main.cpp  -framework GLUT -framework OpenGL
 
 bird_Input.o: bird_Input.cpp  
-	g++ -c  bird_Input.cpp -lstdc++ 
+	$(CC) -c  bird_Input.cpp  
 
 GetLocalCOM.o: GetLocalCOM.cpp
-	g++ -c  GetLocalCOM.cpp -lstdc++ 
+	$(CC) -c  GetLocalCOM.cpp  
 
 GetLocalDistances.o: GetLocalDistances.cpp
-	g++ -c  GetLocalDistances.cpp -lstdc++ 
+	$(CC) -c  GetLocalDistances.cpp  
 
 DrawAndCheckBirds.o: DrawAndCheckBirds.cpp
-	g++ -c  DrawAndCheckBirds.cpp -lstdc++ 
+	$(CC) -c  DrawAndCheckBirds.cpp  
 
 MoveTowardsCOM.o: MoveTowardsCOM.cpp
-	g++ -c  MoveTowardsCOM.cpp -lstdc++ 
+	$(CC) -c  MoveTowardsCOM.cpp  
 
 MoveAwayNearest.o: MoveAwayNearest.cpp
-	g++ -c  MoveAwayNearest.cpp -lstdc++ 
+	$(CC) -c  MoveAwayNearest.cpp  
 
 MoveTowardsAvgSpeed.o: MoveTowardsAvgSpeed.cpp
-	g++ -c  MoveTowardsAvgSpeed.cpp -lstdc++ 
+	$(CC) -c  MoveTowardsAvgSpeed.cpp  
+
+GetEnergy.o: GetEnergy.cpp
+	$(CC) -c  GetEnergy.cpp  

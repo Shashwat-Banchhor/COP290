@@ -42,7 +42,7 @@ Birds DrawAndCheckBirds(Birds birds, GLfloat birdXMax ,  GLfloat birdXMin, GLflo
           ;
         } 
 
-        GLfloat v_max = 0.05f ;
+        GLfloat v_max = 0.0125f ;
        
        if(birds.xSpeed.at(i) > v_max) 
        {

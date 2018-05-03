@@ -16,3 +16,4 @@ Birds DrawAndCheckBirds(Birds birds, GLfloat birdXMax ,  GLfloat birdXMin, GLflo
 Birds MoveTowardsCOM( Birds birds , BirdsLocal local_birds);
 Birds MoveAwayNearest(Birds birds , BirdsLocal local_birds);
 Birds MoveTowardsAvgSpeed(Birds birds , BirdsLocal local_birds);
+void GetEnergy( Birds birds ,std::vector<GLfloat> xS ,std::vector<GLfloat> yS );

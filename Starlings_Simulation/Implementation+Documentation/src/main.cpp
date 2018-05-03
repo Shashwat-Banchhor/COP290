@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include<string>
 #include <vector>
+#include <thread>
 #include <math.h>
 #include <vector>
 #include "functions.h"
@@ -10,8 +11,12 @@
 
 Birds birds;
 BirdsLocal local_birds;
+std::vector< std::thread > ThreadsCollection;
 
 GLfloat birdXMax,birdXMin,birdYMax,birdYMin;
+
+std::vector<GLfloat> xS ;
+std::vector<GLfloat> yS ;
 
 int refreshMillis = 50;
 
@@ -71,12 +76,31 @@ void display (void)
    
    
     //birds = bird_Input(birds);
-	birds = DrawAndCheckBirds( birds,birdXMax,birdXMin,birdYMax,birdYMin);
+	
+
+
+    birds = DrawAndCheckBirds( birds,birdXMax,birdXMin,birdYMax,birdYMin);
     local_birds =  GetLocalDistances(birds);
     local_birds = GetLocalCOM(birds,local_birds);
-   	birds = MoveTowardsCOM(birds,local_birds);
+   	
+    xS.clear();
+    yS.clear();
+
+    for (int i = 0; i < birds.birdCount ; i++)
+    {
+        xS.push_back(birds.xSpeed.at(i));
+        yS.push_back(birds.ySpeed.at(i));
+    }
+
+
+
+    birds = MoveTowardsCOM(birds,local_birds);
    	birds = MoveAwayNearest(birds,local_birds);
-    birds = MoveTowardsAvgSpeed(birds,local_birds);
+    
+
+
+    GetEnergy(birds,xS,yS);
+    // birds = MoveTowardsAvgSpeed(birds,local_birds);
 
 
 
@@ -124,7 +148,14 @@ void mouse(int button,int state,int x,int y){
 
 int main (int argc, char **argv)
 {
-    birds = bird_Input(0.0f,0.0f,0.1f,0.1f,-0.05f,0.05f,0.015f,birds);
+    // std::thread birdie(bird_Input,0.0f,0.0f,0.1f,0.1f,-0.05f,0.05f,0.015f,birds);
+    // try{
+     
+    // }
+    // catch( ...){
+    //     birdie.join();     
+    // }
+    // birdie.join(); 
     
    
     glutInit               (&argc, argv);
