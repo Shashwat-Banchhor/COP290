@@ -1,0 +1,23 @@
+1. Coercion Freedom
+	Person shouldnt be forced by someone else whom he or she has to vote for at the time of voting
+
+
+2. Secrecy
+	The vote of the person must be kept secret.There must be no sources whatsoever to verify who the person has voted for, once he/she exits the polling booth.
+
+3. Non -Repudiation
+	Voting machine should provide proof of the integrity and origin of data. How it's getting the data(that someone has actually voted : no data generation) and that it is counting it correctly(no data eviction) .
+
+4. Verifiability maintaining anonymity  
+	The person himself must be able to verify that what is being recorded is actually what he has voted and the vote once recorded must not have a tag of who's vote it is .
+
+5. Security of Vote
+	The vote once made should be immutable in all forms and it with its value same as all the other votes. Value of a vote must be un-attenuable in its value.
+
+
+6. Prevent Info Leakage
+	It shoud not leak the information it has recorded before a fixed date. 
+	
+
+
+
